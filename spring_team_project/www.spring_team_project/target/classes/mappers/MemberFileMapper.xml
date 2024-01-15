@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.MemberFileDAO">
+  <insert id="uploadPath">
+  	insert into member_file(email, uuid, save_dir, file_name )
+  	values(#{email}, #{uuid}, #{saveDir}, #{fileName})
+  </insert>
+  <select id="selectProfile" resultType="com.projectteamspring.www.domain.MemberFileVO">
+  	select * from member_file order by reg_at desc limit 1
+  </select>
+  <select id="selectAll" resultType="com.projectteamspring.www.domain.MemberFileVO">
+  	select * from member_file
+  </select>
+  <delete id="allDeleteFile">
+  	delete from member_file
+  </delete>
+  </mapper>

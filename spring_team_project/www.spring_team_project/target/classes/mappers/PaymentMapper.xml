@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.PaymentDAO">
+  	
+  	<select id="selectMyPayment" resultType="com.projectteamspring.www.domain.PayMentVO">
+  		select * from payment where buyer_email = #{email}
+  	</select>
+  	
+  	<select id="setPayment" resultType="com.projectteamspring.www.domain.PayMentVO">
+  		select * from payment where imp_uid = #{impUid}
+  	</select>
+  	<update id="updateStatus">
+  		update payment set status=2 where imp_uid = #{uid}
+  	</update>
+  	
+  	<delete id="deletePayments">
+  		delete from payment where imp_uid = #{impUid}
+  	</delete>
+  	
+  	<insert id="buyUp">
+  		insert into payment (pg, buyer_email, buyer_name, buyer_tel, buyer_addr, name, amount, pay_method, imp_uid)
+  		values(#{pg}, #{buyerEmail}, #{buyerName}, #{buyerTel}, #{buyerAddr}, #{name}, #{amount}, #{payMethod}, #{impUid})
+  	</insert>
+  	
+  	<insert id="refundApplication">
+  		insert into refund (uid , reason)
+  		values(#{uid}, #{reason})
+  	</insert>
+  	
+  	<select id="getList" resultType="com.projectteamspring.www.domain.RefundVO">
+  		select * from refund
+  	</select>
+  	
+  	<select id="getRefund" resultType="com.projectteamspring.www.domain.RefundVO">
+  		select * from refund where uid = #{uid}
+  	</select>
+  	
+  	<update id="refundSes">
+  		update refund set refundses = 'Y' where uid = #{uid}
+  	</update>
+  	<update id="updateRefundData">
+  		update payment set refund_at = now(), status=3 where imp_uid = #{uid}
+  	</update>
+  </mapper>

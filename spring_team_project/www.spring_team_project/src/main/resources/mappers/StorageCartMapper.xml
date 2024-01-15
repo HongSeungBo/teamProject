@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.projectteamspring.www.repository.StorageCartDAO">
+	<insert id="insertInfo">
+		insert into storage_cart (email, pno, product_name, price, uuid, save_dir, file_name)
+		values(#{email}, #{pno}, #{productName}, #{price}, #{uuid}, #{saveDir}, #{fileName})
+	</insert>
+	<select id="selectMyCartList" resultType="scvo">
+		select * from storage_cart where email=#{email}
+	</select>
+	<delete id="deleteOneWeek">
+		delete from storage_cart where email=#{email} and (DATE_ADD(NOW(), INTERVAL-1 WEEK)) >= reg_at;
+	</delete>
+	<delete id="buyUp">
+		delete from storage_cart where email=#{buyerEmail}
+	</delete>
+	<delete id="deleteMyCartList">
+		delete from storage_cart where email=#{email} and pno=#{pno}
+	</delete>
+	</mapper>

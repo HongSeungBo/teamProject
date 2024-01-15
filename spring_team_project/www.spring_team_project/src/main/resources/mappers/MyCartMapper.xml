@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.MyCartDAO">
+  	<insert id="editBuyCart">
+  		insert into my_cart (email, pno, product_name, price, product_count, total_price)
+  		values (#{email}, #{pno}, #{productName}, #{price}, #{productCount}, (#{price}*#{productCount}))	
+  	</insert>
+  	<select id="selectMCVO" resultType="mcvo">
+  		select * from my_cart where email=#{email}
+  	</select>
+  	<delete id="delete">
+  		delete from my_cart where ctno=#{ctno}
+  	</delete>
+  	<delete id="buyUp">
+		delete from my_cart where email=#{buyerEmail}
+	</delete>
+	<delete id="deleteOneWeek">
+		delete from my_cart where email=#{email} and (DATE_ADD(NOW(), INTERVAL-1 WEEK)) >= reg_at;
+	</delete>
+  </mapper>

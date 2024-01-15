@@ -1,0 +1,155 @@
+@charset "UTF-8";
+.select-container {
+    display: inline-block;
+    margin-right: 10px; 
+}
+.address {
+   margin : 0 auto;
+   align-items: center;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  
+} 
+
+.containerBox {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border : 2px solid #fff78aed; 
+    padding: 20px;
+    width: 700px;
+    text-align: center;
+    margin: 15px auto;
+}
+.phone {
+ align-items: center;
+ gap: 15px; 
+    }
+
+ #phon {
+ width: 60px;
+ margin: 0; 
+    }
+.e, .p, .nick, .name{
+	width: 400px;
+}
+h4 {
+    color: #343a40;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin: 10px 0;
+    color: #343a40;
+}
+.info-1{
+	 width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+	background-color: #e9ecef;
+	border: 1px solid #2dd3c3;
+	border-radius: 5px;
+    margin-top: 5px;
+}
+.info {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #2dd3c3;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.select-container {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #2dd3c3;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.infoaddress{
+	width: 400px;
+	padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #2dd3c3;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.btn {
+    background-color: #fff78aed;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color:  #fff241ed;
+}
+#subRegionSelect{
+width: 100px;
+}
+
+.input-container h3 {
+  margin: 10px 0;
+ color: #343a40;
+        }
+
+ .input-container.picture {
+  display: flex;
+  align-items: center;
+}
+
+ .input-container.picture input[type="file"] {
+ display: none;
+ }
+
+.uploadBtn {
+ background-color:#98dfd8;
+ color: #fff;
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ margin-left: 10px;
+  }
+ .uploadBtn:hover{
+    background-color: #2dd3c3;
+}
+ .profile{
+ width: 200px;
+  height: 200px;
+border: 1px solid black;
+ border-radius: 10px; 
+ }
+.profile img {
+ width: 200px;
+ height: 200px; 
+ border-radius: 10px;
+ }
+#error-message-pwd{
+    font-size: 13px;
+    color: red;
+    font-weight: bold;
+}

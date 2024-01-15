@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectteamspring.www.repository.MapDAO">
+	
+	<insert id="insertMarker">
+		insert into map (lat,lon,shop_name,sec,animal_type,st_time,ed_time,num,detail,url) 
+		value (#{lat},#{lon},#{shopName},#{sec},#{animalType},#{stTime},#{edTime},#{num},#{detail},#{url})
+	</insert>
+	
+	<update id="markerModifyMno">
+		update map set lat = #{lat},lon = #{lon},shop_name = #{shopName},sec = #{sec},animal_type = #{animalType},
+		st_time = #{stTime},ed_time = #{edTime},num = #{num},detail = #{detail}, url = #{url} where mno =#{mno}
+	</update>
+	
+	<select id="getMarkerList" resultType="com.projectteamspring.www.domain.MapVO">
+		select * from map
+	</select>
+	
+	<select id="getSearchMarkerList" resultType="com.projectteamspring.www.domain.MapVO">
+		select * from map <include refid="nameSearch"></include>
+	</select>
+	
+	<select id="getClickMarker" resultType="com.projectteamspring.www.domain.MapVO">
+		select * from map where mno = #{mno}
+	</select>
+	
+	<select id="setDescMarker" resultType="long">
+		select max(mno) from map
+	</select>
+	
+	
+	<insert id="tmtMarkerPorary">
+		insert into tmt_file (uuid, save_dir, file_name, file_type,reg_at)
+		values(#{uuid}, #{saveDir}, #{fileName}, #{fileType},#{regAt})
+	</insert>
+	
+	<insert id="insertFiles">
+		insert into map_file (uuid, mno, save_dir, file_name)
+		values(#{uuid}, #{mno}, #{saveDir}, #{fileName})
+	</insert>
+	
+	<select id="getClickMarkerFiles" resultType="com.projectteamspring.www.domain.MapFileVO">
+		select * from map_file where mno = #{mno}
+	</select>
+	
+	<delete id="markerFileDeleteAll">
+		delete from map_file where mno = #{mno}
+	</delete>
+	
+	<select id="getFile" resultType="com.projectteamspring.www.domain.MapFileVO">
+		select * from map_file where uuid =#{uuid}
+	</select>
+	
+	<delete id="markerDelete">
+		delete from map where mno = #{mno}
+	</delete>
+	
+	<select id="indexMarker" resultType="com.projectteamspring.www.domain.MapVO">
+		select * from map order by mno desc limit #{cnt}
+	</select>
+	
+	<sql id="nameSearch">
+		<choose>
+			<when test="shopName == '' and sec == ''"></when>
+			<when test="shopName != '' and sec != ''">
+				where shop_name like concat('%', #{shopName}, '%') and sec = #{sec}
+			</when>
+			<when test='shopName == ""'>
+				where sec = #{sec}
+			</when>
+			<when test='sec == ""'>
+				where shop_name like concat('%', #{shopName}, '%')
+			</when>
+		</choose>
+	</sql>
+</mapper>

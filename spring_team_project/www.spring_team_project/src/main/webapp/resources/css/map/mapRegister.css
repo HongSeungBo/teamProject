@@ -1,0 +1,106 @@
+.con{
+    border: 2px solid black;
+    position: relative;
+    display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+}
+#inputBox{
+    width: 400px;
+    z-index: 5;
+    background-color: rgba(255, 255, 0, 0.10);
+}
+#inputBox input{
+	margin: 7px;
+	padding: 7px;
+}
+#inputBox select{
+padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 7px;
+}
+#inputBox textarea{
+	resize: none;
+}
+.buy-cart-li div{
+	display: flex;
+}
+.buy-cart-li div button{
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff78aed;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    color: black;
+    cursor: pointer;
+}
+.buy-cart-li span{
+	margin: 10px;
+}
+#menuBtn{
+    /* background-color: rgb(255, 234, 0); */
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+#animalTypeBox{
+    list-style: none;
+    padding-left: 4px;
+    margin-bottom: 4px;
+}
+/* .animalType{
+    height: 20px;
+    font-size: 50px;
+} */
+input[type="checkbox"] {
+    width: 20px; 
+    height: 20px; 
+}
+
+#markerList{
+    background-color: rgba(255, 255, 0, 0.10);
+    z-index: 2;
+    cursor: pointer;
+    height: 800px; 
+    overflow-y: scroll; 
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(251, 238, 96);
+}
+
+#addBtn{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #fff78aed;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+#map{
+    width:1200px;
+    height:800px;
+    display: inline-block;
+    border-radius: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+}
+#filezone img{
+	object-fit: fill;
+	width: 150px;
+	height: 150px;
+	border-radius: 30px;
+}

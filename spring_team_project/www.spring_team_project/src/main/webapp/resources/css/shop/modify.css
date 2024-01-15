@@ -1,0 +1,239 @@
+@charset "UTF-8";
+#mainFileZone #subFileZone{
+	width:100%;
+	height:350px;
+}
+ul, li{
+	margin: 0;
+	padding: 0;
+}
+#mainFileImg{
+	margin-top: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 350px;
+	height: 350px;	
+}
+.product-register{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+	margin: 0 auto 30px;
+}
+.product-register:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.product-main-img{
+	border: 3px solid #ffeb99;
+	width: 400px;
+	height: 450px;
+	margin-bottom: 10px;
+}
+.product-info{
+	width: 350px;
+	height: 150px;
+	text-align: left;
+}
+.product-name{
+	width: 320px;
+}
+.product-price{
+	width: 225px;
+}
+.product-detail{
+	width: 600px;
+	height: 600px;
+	float: right;
+}
+.detail-more{
+	margin-bottom: 30px;
+}
+.left-div{
+	width: 385px;
+	margin-right: 30px;
+	margin-left: 110px;
+}
+.div-reg-btn{
+	margin-top:150px;
+	margin-bottom: 150px;
+	width:100%;
+	text-align: center;
+}
+.reg-btn{
+	background-color: #fff78aed;
+	border: 1px solid #fff78aed;
+	width: 90px;
+	height: 40px;
+	border-radius: 10px;
+}
+.reg-btn:hover{
+	cursor: pointer;
+	background-color: #fff241ed;
+	transform: scale(1.03);
+}
+.product-content{
+	border: 3px solid #ffeb99;
+	width: 550px;
+	height: 500px;
+	padding: 15px;
+	resize: none;
+}
+.product-content:focus{
+	outline:none;
+	border: 3px solid #ffdd57;
+}
+.detail-more{
+	margin-left: auto;
+	margin-right: auto;
+}
+.sub-img-btn{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.main-img-btn{
+	margin-top: 25px;
+}
+.img-btn{
+	cursor: pointer;
+	background-color: #98DFD8;
+	outline: none;
+	border: 1px solid #98DFD8;
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+	color: white;
+}
+.img-btn:hover{
+	background-color: #2dd3c3;
+	transform: scale(1.03);
+}
+#modTagBtn{
+	width: 100px;
+	height: 33px;
+	border-radius: 10px;
+	background-color: #98DFD8;
+	border: 1px solid #98DFD8;
+	color: white;
+}
+#tagBtn:hover{
+	background-color: #2dd3c3;
+	transform: scale(1.03);
+}
+#tagName{
+	width: 210px;
+}
+#tagZone{
+	padding-left: 15px;
+}
+#tagZone>span{
+	color: #3C2A21;
+}
+.tagdelBtn{
+	outline: none;
+	border:1px solid white;
+	border-radius: 7px;
+	color: rgba(102, 102, 102, 0.5);
+}
+.tagDelBtn:hover{
+	cursor: pointer;
+	transform: scale(1.03);
+}
+.subfiles{
+	display: flex;
+	justify-content: right;
+}
+#subFileZone>img{
+	margin-top: 10px;
+}
+.sub-file-div{
+	width: 95px;
+	margin-right: 10px;	
+}
+select {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin: 5px;
+}
+input{
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin: 5px;
+}
+form {
+	margin-top: 15px;
+}
+#modTagZone{
+	list-style: none;
+}
+#modTagZone li{
+	margin: 5px 3px;
+}
+.exTagDelBtn{
+	background-color: rgb(255, 80, 80);
+    border: 1px solid rgb(255, 80, 80);
+    color: rgb(225, 225, 225);
+    border-radius: 7px;
+    cursor: pointer;
+}
+.exTagDelBtn:hover{
+	background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    color: white;
+}
+.tagDelBtn{
+	background-color: rgb(255, 80, 80);
+    border: 1px solid rgb(255, 80, 80);
+    color: rgb(225, 225, 225);
+    border-radius: 7px;
+    cursor: pointer;
+}
+.tagDelBtn:hover{
+	background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    color: white;
+}
+.delBtn{
+	background-color: rgb(255, 80, 80);
+    border: 1px solid rgb(255, 80, 80);
+    color: rgb(225, 225, 225);
+    border-radius: 7px;
+    cursor: pointer;
+}
+.delBtn:hover{
+	background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    color: white;
+}
+.main-file-div img{
+	object-fit: fill;
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
+}
+.sub-file-div img{
+	object-fit: fill;
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
+}
+#mainFileImg img{
+	object-fit: fill;
+	width: 350px;
+	height: 350px;
+	border-radius: 30px;
+}
+#subFileZone img{
+	object-fit: fill;
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
+}

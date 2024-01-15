@@ -1,0 +1,220 @@
+@charset "EUC-KR";
+.contentBox {
+  width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border : 2px solid #fff78aed; 
+  border-radius: 8px;
+}
+.tag{
+	font-size: 17px;
+	font-weight: bold;
+}
+.boardMod,
+.boardDel,
+.boardList {
+  background-color: #98dfd8;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding : 7px;
+  text-decoration: none;
+}
+.commentdelmodi{
+	width: 220px;
+	text-align: center;
+}
+.hr{
+	border: 1px solid #98dfd8;
+}
+.boardMod:hover,
+.boardDel:hover,
+.boardList:hover {
+  background-color: #2dd3c3;
+}
+
+.de {
+  margin-top: 20px;
+}
+
+
+.detailTitle h1 {
+  margin: 0;
+  color: #333;
+}
+
+.detailTable {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.detailTable th {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #98dfd8;
+}
+
+.detailTable td {
+  padding: 10px;
+}
+
+.cmtAllbox {
+	width : 1000px;
+	margin: 30px auto;
+}
+.contentvalue{
+	text-align: center;
+	margin-bottom: 80px;
+}
+.commentbox {
+	margin: 50px auto;
+	width: 800px;
+  	display: flex;
+  	align-items: center;
+}
+
+.cmtspanID {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.cmtintput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.cmtintput:focus{
+	border: 1px solid #efefef;
+}
+
+.addBtn {
+  background-color: #fff78aed;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.addBtn:hover {
+  background-color: #fff241ed;
+}
+
+.cmtListul {
+	width : 800px;
+	margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    background-color: white;
+  }
+
+  
+  .cmtListli {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+ 
+  .cmtListdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+ 
+  .cmtListIDdiv {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+ 
+  .cmtListspan {
+    color: #888;
+    font-size: 12px;
+  }
+  .cmtli {
+    list-style: none;
+    margin-bottom: 15px;
+    border: 1px solid #fff78aed;
+    padding: 15px;
+    border-radius: 5px;
+    
+  }
+
+
+
+
+  /* 작성자 스타일 */
+  .fw-bole {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  /* 수정, 삭제 버튼 스타일 */
+  .modBtn,
+  .delBtn {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+   
+    .inputt {
+      width: 600px;
+      margin-bottom: 10px;
+      border:none;
+      padding: 10px;
+    }
+
+    .btn-custom {
+      margin-right: 5px;
+    }
+
+    .edit-form {
+      display: none;
+    }
+.modBtn,.postBtn{
+	 background-color: #fff78aed;
+      border : none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin: 10px 10px;
+}
+.delBtn,.cancel{
+	 background-color: red;
+      color: #fff;
+      border : none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin: 10px 10px;
+}
+
+	.moreview {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #moreBtn {
+      background-color: #98dfd8;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #moreBtn:hover {
+      background-color: #2dd3c3;
+      
+    }

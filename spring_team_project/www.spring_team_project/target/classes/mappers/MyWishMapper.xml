@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.MyWishDAO">
+  <select id="selectEmail" resultType="int">
+  	select count(email) from my_wish where email=#{email} and pno = #{pno}
+  </select>
+  <insert id="insertInfo">
+  	insert into my_wish(email, pno, product_name, price, uuid, save_dir, file_name)
+  	values(#{email}, #{pno}, #{productName}, #{price}, #{uuid}, #{saveDir}, #{fileName})
+  </insert>
+  <delete id="removeInfo">
+  	delete from my_wish where email=#{email} and pno = #{pno}
+  </delete>
+  <select id="selectMyWishList" resultType="mwvo">
+  	select * from my_wish where email=#{email}
+  </select>
+  <delete id="delete">
+  	delete from my_wish where pno=#{pno} and email=#{email}
+  </delete>
+  <delete id="deleteOneWeek">
+		delete from my_wish where email=#{email} and (DATE_ADD(NOW(), INTERVAL-1 WEEK)) >= reg_at;
+	</delete>
+  </mapper>

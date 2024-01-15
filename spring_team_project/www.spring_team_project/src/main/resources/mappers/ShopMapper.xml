@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.projectteamspring.www.repository.ShopDAO">
+	<insert id="insert">
+		insert into product (product_name, price, product_content, classification, tag_name)
+		values(#{svo.productName}, #{svo.price}, #{svo.productContent}, #{svo.classification}, #{tagName})
+	</insert>
+	<select id="getSelectPno" resultType="long">
+		select max(pno) from product where del_type = 'N'
+	</select>
+	
+	<select id="getList" resultType="svo">
+		select * from product where del_type = 'N' <include refid="sea"></include> order by pno desc limit #{pageStart},#{qty}
+	</select>
+	<update id="updateAvgScore">
+		update product set avg_score = (select round(avg(score), 1) from product_comment where product_comment.pno = product.pno and del_type='N')
+	</update>
+	<update id="updateCmtQty">
+		update product set cmt_qty = (select count(pcno) from product_comment where product_comment.pno = product.pno and del_type='N')
+	</update>
+	<update id="updateWishCnt">
+		update product set wish_cnt = (select count(email) from my_wish where my_wish.pno = product.pno)
+	</update>
+	<select id="getMaxPno" resultType="long">
+		select max(pno) from product where del_type = 'N'
+	</select>
+	<select id="getTotalCount" resultType="int">
+		select count(pno) from product where del_type = 'N' <include refid="sea"></include>
+	</select>
+	<select id="getSelectOne" resultType="svo">
+		select * from product where pno = #{pno} and del_type = 'N'
+	</select>
+	<update id="updateSubFileCnt">
+		update product set sub_file_cnt = (select count(pno) from product_file where pno = product.pno and del_type = 'N' and main=0) where del_type = 'N'
+	</update>
+	<select id="getProductList" resultType="svo">
+		select * from product where del_type = 'N' <include refid="sea"></include> order by pno desc limit #{pageStart}, #{qty}
+	</select>
+	<select id="getProductTotalCount" resultType="int">
+		select count(pno) from product where del_type='N' <include refid="sea"></include>
+	</select>
+	<update id="Modify">
+		update product set product_name = #{svo.productName}, price = #{svo.price}, product_content = #{svo.productContent}, classification = #{svo.classification},
+		tag_name=#{tagName} where pno = #{svo.pno}
+	</update>
+	<update id="deleteProduct">
+		update product set del_type = 'Y' where pno = #{pno}
+	</update>
+	<select id="getTopWishList" resultType="svo">
+		select * from product where del_type='N' order by wish_cnt desc limit 0, 10
+	</select>
+	<sql id="sea">
+		<if test="type != null">
+			<trim prefix="and (" suffix=")" prefixOverrides="or">
+				<foreach collection="typeToArray" item="type">
+					<trim prefix="or">
+						<choose>
+							<when test="type=='p'.toString()">
+								product_name like concat('%',#{keyword},'%')
+							</when>
+							<when test="type=='c'.toString()">
+								classification like concat('%',#{keyword},'%')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+		<if test="tagType != null">
+			<trim prefix="and (" suffix=")" prefixOverrides="or">
+				<trim prefix="or">
+						<choose>
+							<when test="tagType=='p'.toString()">
+								tag_name like concat('%','앵무새','%')
+							</when>
+							<when test="tagType=='l'.toString()">
+								tag_name like concat('%','도마뱀','%')
+							</when>
+							<when test="tagType=='h'.toString()">
+								tag_name like concat('%','고슴도치','%')
+							</when>
+							<when test="tagType=='d'.toString()">
+								tag_name like concat('%','오리너구리','%')
+							</when>
+							<when test="tagType=='s'.toString()">
+								tag_name like concat('%','뱀','%')
+							</when>
+							<when test="tagType=='x'.toString()">
+								tag_name like concat('%','여우','%')
+							</when>
+							<when test="tagType=='g'.toString()">
+								tag_name like concat('%','기니피그','%')
+							</when>
+							<when test="tagType=='r'.toString()">
+								tag_name like concat('%','토끼','%')
+							</when>
+							<when test="tagType=='t'.toString()">
+								tag_name like concat('%','거북이','%')
+							</when>
+							<when test="tagType=='c'.toString()">
+								tag_name like concat('%','카멜레온','%')
+							</when>
+							<when test="tagType=='f'.toString()">
+								tag_name like concat('%','어류','%')
+							</when>
+							<when test="tagType=='m'.toString()">
+								tag_name like concat('%','두더지','%')
+							</when>
+							<when test="tagType=='o'.toString()">
+								tag_name like concat('%','설치류','%')
+							</when>
+						</choose>
+					</trim>
+			</trim>
+		</if>
+	</sql>
+	</mapper>

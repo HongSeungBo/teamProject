@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.MemberRealFileDAO">
+  <insert id="insert">
+  	insert into member_realfile (uuid, email, save_dir, file_size, file_name)
+  	values(#{uuid},#{email},#{saveDir},#{fileSize},#{fileName})
+  </insert>
+  
+  <select id="getProFile" resultType="com.projectteamspring.www.domain.MemberFileVO">
+  	select * from member_realfile where email=#{email}
+  </select>
+  
+  <insert id="modify">
+  insert into member_realfile (uuid, email, save_dir, file_size, file_name)
+  	values(#{uuid},#{email},#{saveDir},#{fileSize},#{fileName})
+  </insert>
+  
+  <select id="checkEmail" resultType="int">
+  	select count(email) from member_realfile where email =#{email}
+  </select>
+  
+  <update id="realmodifyfile">
+  	update member_realfile set uuid = #{uuid} ,save_dir =#{saveDir}, file_size = #{fileSize}, 
+  	file_name = #{fileName} where email = #{email}
+  </update>
+  
+  <select id="selectAll" resultType="com.projectteamspring.www.domain.MemberFileVO">
+  	select * from member_realfile
+  </select>
+  </mapper>
+  

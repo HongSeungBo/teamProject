@@ -1,0 +1,267 @@
+@charset "UTF-8";
+#modalCon{
+    position:absolute;
+    display:none;
+    justify-content: center;
+    top:50%;
+    left:50%;
+    width:500px;
+    height:500px;
+    transform: translate(-50%, -30%);
+    background-color: rgb(255, 255, 255);
+}
+.modal_background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(200, 200, 200,0.5) ;
+}
+#modalInfo{
+	height: 425px;
+}
+.select-box{
+	width: 500px;
+	text-align: center;
+	margin: 15px auto;
+	padding: 10px;
+	border-color: rgb(200, 200, 200);
+	border-bottom: 1px solid rgb(225, 225, 225, 0.4);
+}
+.select{
+	font-size: 30px;
+}
+.select-method{
+	width: 125px;
+	height: 50px;
+	display: inline;
+	margin-left: 10px;
+}
+.select-method img{
+	object-fit: fill;
+	width: 125px;
+	height: 50px;
+	cursor: pointer;
+}
+.modal-btnBox{
+	text-align: right;
+}
+#cancle{
+	width: 75px;
+	height: 50px;
+	border-radius: 7px;
+	border: none;
+	background-color: #fbeef2;
+	color: #d03362;
+	cursor: pointer;
+}
+h2, h3{
+	margin-left: 20px;
+	width: 600px;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.box-li{
+	display: flex;
+	justify-content: space-between;
+	width: 800px;
+	margin: 20px 0 20px 10px;
+	align-items: center;
+	border-bottom: 1px solid rgba(225, 225, 225, 0.4);
+	padding-bottom: 15px;
+}
+.box-li > *{
+	margin: 0 5px;
+}
+.list-button-box{
+	display: flex;
+}
+
+.box-li button{
+	width: 75px;
+	height: 40px;
+	border-radius: 9px;
+	background-color: #ffeb99;
+	border: 1px solid #ffeb99;
+	border: none;
+	margin: 0 3px;
+	color: white;
+	cursor: pointer;
+}
+.box-li button:hover{
+	background-color: #ffdd57;
+	border: 1px solid #ffdd57;
+	transform: scale(1.02);
+}
+#buyCartZone{
+	
+}
+.cart-list{
+	display: table;
+	table-layout: fixed;
+	border-spacing: 30px;
+}
+
+.buy-cart-li{
+	display: table-row;
+	margin: 15px 20px;
+}
+.buy-cart-li strong{
+	display: table-cell;
+}
+.buy-cart-li span{
+	display: table-cell;
+}
+.cart-delBtn{
+	width: 40px;
+	height: 25px;
+	border-radius: 9px;
+	background-color: rgb(255, 80, 80);
+	border: 1px solid rgb(255, 80, 80);
+	color: rgb(225, 225, 225);
+	cursor: pointer;
+}
+.cart-delBtn:hover{
+	background-color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    color: white;
+}
+.final-box{
+	margin: 15px;
+}
+.final-box > *{
+	margin: 0 15px;
+}
+#buyBtn{
+	margin: 10px;
+	width: 140px;
+	height: 40px;
+	border-radius: 7px;
+	cursor: pointer;
+	background-color: #ffeb99;
+	border: 1px solid #ffeb99;
+	color: white;
+}
+#buyBtn:hover{
+	background-color: #ffdd57;
+	border: 1px solid #ffdd57;
+	transform: scale(1.03);
+}
+.listbox{
+	display: flex;
+	width: 150px;
+}
+.listbox-info{
+	display: flex;
+	width: 350px;
+}
+.product-count{
+	width: 50px;
+}
+.cart-con{
+	display: flex;
+}
+.con{
+	width: 900px;
+}
+.payment-con{
+	padding-left: 30px;
+	border-left: 1px solid rgb(195, 195, 195, 0.4);
+}
+.payment-listBox{
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	width: 150px;
+}
+.payment-box-li{
+	display: flex;
+	justify-content: space-between;
+	width: 1000px;
+	margin: 20px 0 20px 10px;
+	align-items: center;
+	border-bottom: 1px solid rgba(225, 225, 225, 0.4);
+	padding-bottom: 15px;
+}
+.payment-box-li > *{
+	margin: 0 5px;
+}
+.payment-box-li button{
+	width: 75px;
+	height: 40px;
+	border-radius: 9px;
+	background-color: #ffeb99;
+	border: 1px solid #ffeb99;
+	border: none;
+	margin: 0 3px;
+	color: white;
+	cursor: pointer;
+}
+.payment-box-li button:hover{
+	background-color: #ffdd57;
+	border: 1px solid #ffdd57;
+	transform: scale(1.02);
+}
+.listBox-subject{
+	font-size: 14px;
+	color: rgb(111, 111, 111);
+}
+.listBox-content{
+	font-size: 18px;
+	color: black;
+}
+.refund-2{
+	display: flex;
+	background-color: #fbeef2;
+	color: #d03362;
+	width: 75px;
+	height: 40px;
+	border-radius: 9px;
+	justify-content: center;
+	align-items: center;
+}
+.refund-3{
+	display: flex;
+	background-color: #e4faf3;
+	color: #16b079;
+	width: 75px;
+	height: 40px;
+	border-radius: 9px;
+	justify-content: center;
+	align-items: center;
+}
+.totalSum{
+	font-size: 20px;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	padding: 7px;
+}
+.wish-list-imgBox img{
+	object-fit: fill;
+	width: 100px;
+	height: 100px;
+	border-radius: 15px;
+}
+.modal-info{
+	background-color: rgb(180, 180, 255);
+}
+.modal-totalSum-box{
+	height: 35px;
+}
+.totalSpan{
+	font-size: 20px;
+	font-weight: 700;
+	margin: 15px 15px;
+}
+.totalInput{
+	border:none;
+	outline: none;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 7px;
+}

@@ -1,0 +1,52 @@
+alter table board add isdel varchar(1) default 'y' after mod_at;
+--12/04
+alter table board add likes bigint default 0 after cmt_qty;
+
+create table board (
+bno bigint not null auto_increment,
+writer varchar(100) not null,
+title varchar(50) not null,
+content text,
+reg_at datetime not null default now(),
+mod_at datetime not null default now(),
+read_count int default 0,
+isdel varchar(1) default 'n',
+cmt_qty int default 0,
+likes bigint default 0,
+primary key(bno));
+
+
+create table comment (
+cno bigint not null auto_increment,
+bno bigint not null,
+writer varchar(100) not null,
+content text not null,
+reg_at datetime default now(),
+mod_at datetime default now(),
+primary key(cno)); 
+
+
+alter table member add address varchar(200) not null;
+alter table member add phon_num varchar(30) not null;
+alter table member add birth varchar(100) not null;
+alter table member add name varchar(50) not null;
+alter table member add isdel varchar(1) default 'N';
+
+create table member_file(
+uuid varchar(256) not null,
+email varchar(100) not null,
+save_dir varchar(256),
+file_size bigint,
+file_name varchar(256),
+reg_at datetime default now(),
+primary key(uuid));
+
+create table member_realfile(
+uuid varchar(256) not null,
+email varchar(100) not null,
+save_dir varchar(256),
+file_size bigint,
+file_name varchar(256),
+reg_at datetime default now(),
+primary key(uuid));
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.projectteamspring.www.repository.TmtFileSaveDAO">
+	<insert id="tmtporary">
+		insert into tmt_file (uuid, save_dir, file_name, file_type, main_img)
+		values(#{uuid}, #{saveDir}, #{fileName}, #{fileType}, 'Y')
+	</insert>
+	<select id="getMaxImage" resultType="string">
+		select save_dir from tmt_file order by reg_at desc limit 1
+	</select>
+	<select id="getUuid" resultType="string">
+		select uuid from tmt_file order by reg_at desc limit 1
+	</select>
+	<select id="getFileName" resultType="string">
+		select file_name from tmt_file order by reg_at desc limit 1
+	</select>
+	<insert id="tmtSubporary">
+		insert into tmt_file (uuid, save_dir, file_name, file_type)
+		values(#{uuid}, #{saveDir}, #{fileName}, #{fileType})
+	</insert>
+	<select id="getSubImage" resultType="string">
+		select save_dir from tmt_file order by reg_at desc limit #{num}
+	</select>
+	<select id="getSubUuid" resultType="string">
+		select uuid from tmt_file order by reg_at desc limit #{num}
+	</select>
+	<select id="getSubFileName" resultType="string">
+		select file_name from tmt_file order by reg_at desc limit #{num}
+	</select>
+	<delete id="deleteAllFiles">
+		delete from tmt_file
+	</delete>
+	</mapper>

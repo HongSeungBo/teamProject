@@ -1,0 +1,57 @@
+@charset "UTF-8";
+.modifyBox {
+    width: 940px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #fff78aed; 
+  }
+
+  .bnum, .titlee, .writ {
+    width: 900px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #2dd3c3;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .bnum, .writ {
+    background-color: #e9ecef;
+    color: #495057;
+  }
+
+  .titlee {
+    font-size: 18px;
+  }
+
+  .modBtn {
+    background-color: #fff78aed; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 900px;
+  }
+
+.listBBtn{
+	margin-top : 15px;
+	 background-color: #98dfd8;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    width: 900px;
+}
+  .modBtn:hover{
+  background-color: #fff241ed;
+  }
+.listBBtn:hover {
+    background-color: #2dd3c3;
+  }

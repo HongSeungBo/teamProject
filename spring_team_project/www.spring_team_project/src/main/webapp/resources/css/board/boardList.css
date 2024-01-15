@@ -1,0 +1,157 @@
+@charset "UTF-8";
+.search {
+  margin: 20px;
+  text-align: center;
+}
+
+.search form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search div {
+  display: flex;
+  gap: 10px;
+}
+
+.searchBtn{
+	background-color: #fff78aed;
+	width : 120px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.searchBtn:hover{
+	background-color: #ffe680;
+}
+
+#inputGroupSelect01 {
+  margin-right: 10px;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+  border: 1px solid #efefef;
+}
+
+input[type="search"] {
+  padding: 8px;
+  border: 1px solid  #efefef;
+  border-radius: 15px;
+  width: 450px;
+}
+input[type="search"]:focus{
+	border: 1px solid  #efefef;
+}
+
+.registerBtn {
+  background-color: #98dfd8;
+  width : 120px;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.boardlist{
+	width : 1500px;
+	margin: 20px auto;
+}
+.listbox {
+  margin: 0 auto;
+}
+
+.listUl {
+  list-style: none;
+  padding: 0;
+}
+
+.listHeader{
+  display: flex;
+  font-weight: bold;
+}
+.content{
+  display: flex;
+  font-weight: bold;
+}
+
+.listHeader span{
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  line-height: 40px;
+}
+.content span,
+.listTitle  {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  line-height: 40px;
+}
+.cmtcount{
+	color: red;
+}
+.listUl li {
+  display: flex;
+  border-bottom: 1px solid #ddd; 
+}
+
+
+.listUl li:last-child {
+  border-bottom: none; 
+}
+
+.listUl li span {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+}
+
+
+.listTitle {
+  text-decoration: none;
+  font-weight: bold;
+  font-size : 20px;
+   line-height: 40px; 
+}
+
+
+.ulpage {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+.ulpage li {
+ margin: 0 5px;
+}
+
+  .ulpage a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgb(213,213,213);
+    border-radius: 4px;
+    &:hover {
+      background-color: #fffddfed;
+    }
+  }
+ .page-item a.ullia.active {
+  background-color: #fff78aed;
+}
+
+.page-item a.ullia.active:hover {
+  background-color: #ffe680;
+}
+
+.boardRegister{
+	margin-left: 1380px;
+	margin-bottom: 30px;
+	
+}

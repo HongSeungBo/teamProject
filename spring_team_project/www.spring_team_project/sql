@@ -1,0 +1,272 @@
+
+ create table member (
+id varchar(100)  not null,
+pwd varchar(100)  not null,
+name varchar(100)  not null,
+nick_name varchar(50) not null,
+phon_num varchar(30) not null,
+address varchar(200) not null,
+birth varchar(100) not null,
+reg_at datetime  not null default now(),
+primary key(email));
+
+
+create table map (
+mno bigint not null auto_increment,
+shop_name varchar(100),
+sectors varchar(50),
+lat double,
+lon double,
+st_time varchar(50),
+ed_time varchar(50),
+num varchar(50),
+primary key(mno));
+
+
+
+create table map_file (
+uuid varchar(256) not null,
+mno bigint not null,
+save_dir varchar(256),
+file_name varchar(256),
+main boolean,
+primary key(uuid));
+
+
+
+
+
+--승보 --
+create table tmt_file (
+uuid varchar(200),
+save_dir varchar(100),
+file_name varchar(100),
+file_type varchar(100),
+reg_at datetime default now(),
+main_img varchar(10) default 'N',
+primary key(uuid));
+
+
+create table product_comment_tmt_file (
+uuid varchar(256) not null,
+pcno bigint not null,
+save_dir varchar(256),
+file_name varchar(256),
+primary key(uuid));
+
+-- 2023-11-28 승보 avg_score, cmt_qty 추가 --
+create table product (
+pno bigint not null auto_increment,
+product_name varchar(80),
+price int,
+product_content varchar(500),
+classification varchar(50),
+reg_at datetime default now(),
+del_type varchar(10) default 'N',
+sub_file_cnt int default 0,
+avg_score decimal(2,1) default 0.0,
+cmt_qty bigint default 0,
+tag_name varchar(256),
+primary key(pno));
+
+-- 2023-11-28 승보 pno 추가 --
+create table product_comment_file  (
+uuid varchar(256) not null,
+pno bigint not null,
+pcno bigint not null,
+save_dir varchar(256),
+file_name varchar(256),
+del_type varchar(10) default 'N',
+primary key(uuid));
+
+-- 2023-11-28 승보 recommend --
+create table product_comment (
+pcno bigint not null auto_increment,
+pno bigint not null,
+id varchar(100) not null,
+content varchar(200),
+score int,
+reg_at datetime default now(),
+del_type varchar(10) default 'N',
+recommend int default 0,	
+primary key(pcno));
+
+-- 2023-11-28 승보 del_type --
+ create table  product_file  (
+uuid varchar(256) not null,
+pno bigint not null,
+save_dir varchar(256),
+file_size bigint,
+file_name varchar(256),
+main boolean default '0',
+reg_at datetime default now(),
+del_type varchar(10) default 'N',
+tmt_del varchar(10) default 'N',
+primary key(uuid));
+
+-- 2023-11-28 승보 del_type --
+create table  product_file  (
+uuid varchar(256) not null,
+pno bigint not null,
+save_dir varchar(256),
+file_size bigint,
+file_name varchar(256),
+main boolean default '0',
+reg_at datetime default now(),
+del_type varchar(10) default 'N',
+primary key(uuid));
+
+create table my_wish  (
+email varchar(100) not null,
+pno bigint not null,
+wish_date datetime default now(),
+product_name varchar(80) not null,
+price int not null,
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null);
+
+create table storage_cart  (
+email varchar(100) not null,
+pno bigint not null,
+edit_cart datetime default now(),
+product_name varchar(80) not null,
+price int not null,
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null);
+
+create table my_cart  (
+ctno bigint auto_increment,
+email varchar(100) not null,
+pno bigint not null,
+product_name varchar(80) not null,
+price int not null,
+product_count int default 1,
+total_price int not null,
+primary key(ctno));
+
+---결제 payment ----
+create table payment(
+imp_uid varchar(80) not null,
+pg varchar(80) not null,
+buyer_email varchar(80) not null,
+buyer_name varchar(80) not null,
+buyer_tel varchar(80) not null,
+buyer_addr varchar(256) not null,
+name varchar(256) not null,
+amount int not null,
+pay_method varchar(50) not null,
+reg_at datetime default now(),
+refund_at datetime,
+status tinyint default 1,
+primary key(imp_uid));
+
+-- 장영준 --
+create table map (
+mno bigint not null auto_increment,
+lat double not null,
+lon double not null,
+shop_name varchar(50),
+sec varchar(50),
+animal_type varchar(100),
+st_time varchar(20),
+ed_time varchar(20),
+num varchar(20),
+detail varchar(200),
+url varchar(200),
+primary key(mno));
+
+create table map_file (
+uuid varchar(256) not null,
+mno bigint not null,
+save_dir varchar(256),
+file_name varchar(256),
+reg_at datetime default now(),
+primary key(uuid));
+---
+
+
+
+-- 2023/ 12 / 11 김진호--
+create table board (
+bno bigint not null auto_increment,
+writer varchar(100) not null,
+title varchar(50) not null,
+content text,
+reg_at datetime not null default now(),
+mod_at datetime not null default now(),
+read_count int default 0,
+animal_type VARCHAR(200),
+isdel varchar(1) default 'n',
+cmt_qty int default 0,
+primary key(bno));
+
+create table comment (
+cno bigint not null auto_increment,
+bno bigint not null,
+writer varchar(100) not null,
+content text not null,
+reg_at datetime default now(),
+mod_at datetime default now(),
+primary key(cno)); 
+
+create table member_file(
+uuid varchar(256) not null,
+email varchar(100) not null,
+save_dir varchar(256),
+file_size bigint,
+file_name varchar(256),
+reg_at datetime default now(),
+primary key(uuid));
+
+create table member_realfile(
+uuid varchar(256) not null,
+email varchar(100) not null,
+save_dir varchar(256),
+file_size bigint,
+file_name varchar(256),
+reg_at datetime default now(),
+primary key(email));
+
+create table member(
+email varchar(100) not null,
+pwd varchar(1000) not null,
+name varchar(30) not null,
+birth varchar(50) not null,
+nick_name varchar(100) not null,
+address varchar(200) not null,
+phon_num varchar(30) not null,
+reg_at datetime default now(),
+last_login datetime, 
+isdel varchar(1) default 'N',
+primary key(email));
+
+alter table member add column address varchar(200) not null;
+alter table member add column phon_num varchar(30) not null;
+alter table member add column isdel varchar(1) default 'N';
+alter table member add column name varchar(30) not null;
+alter table member add column birth varchar(50) not null;
+
+create table announcement(
+ano bigint not null auto_increment,
+writer varchar(50) not null,
+title varchar(100) not null,
+content text not null,
+reg_at datetime default now(),
+mod_at datetime default now(),
+read_count int default 0,
+isdel varchar(1) default 'N',
+primary key(ano)
+);
+--- 12-20 장영준 ---
+(환불신청용 테이블)
+create table refund(
+uid VARCHAR(80) not null ,
+reason varchar(200) not null,
+refundses varchar(1) default 'N',
+reg_at datetime default now(),
+primary key(uid)
+);
+
+ALTER TABLE board add COLUMN animal_type VARCHAR(50);

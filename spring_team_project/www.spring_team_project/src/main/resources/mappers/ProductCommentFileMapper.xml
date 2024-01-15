@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.ProductCommentFileDAO">
+  	<insert id="registerFile">
+  		insert into product_comment_file (uuid, pcno, save_dir, file_name, pno)
+  		values (#{uuid}, #{pcno}, #{saveDir}, #{fileName}, #{pno})
+  	</insert>
+  	<select id="getFileInfo" resultType="pcfvo">
+  		select * from product_comment_file where pcno=#{pcno} and del_type = 'N'
+  	</select>
+  	<select id="getFileCount" resultType="int">
+  		select count(uuid) from product_comment_file where pcno=#{pcno} and del_type = 'N'
+  	</select>
+  	<select id="setFileList" resultType="pcfvo">
+  		select * from product_comment_file where pcno=#{pcno} and del_type = 'N'
+  	</select>
+  	<update id="deleteCmtFile">
+  		update product_comment_file set del_type = 'Y' where pcno=#{pcno}
+  	</update>
+  	<select id="selectCount" resultType="int">
+  		select count(uuid) from product_comment_file where del_type='N' and pcno=#{pcno}
+  	</select>
+  	<update id="deletCmtFileAll">
+  		update product_comment_file set del_type = 'Y' where pno = #{pno}
+  	</update>
+  </mapper>

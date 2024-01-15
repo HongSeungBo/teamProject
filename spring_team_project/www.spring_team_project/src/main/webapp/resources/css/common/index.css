@@ -1,0 +1,297 @@
+@charset "UTF-8";
+i{
+	font-size: 18px;
+}
+.mapDetail{
+	border-radius: 30px;
+}
+
+.contentBox {
+	text-align: center; width : 1500px;
+	height: 500px;
+	margin: 20px auto;
+	position: relative;
+	border:2px solid #fff78aed;
+	border-radius: 10px;
+	width: 1500px;
+}
+.subject {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.itemBox {
+	margin-top: 30px;
+	position: absolute;
+	width: 1400px;
+	height: 350px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+}
+
+.item {
+	width: 1200px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+.itemUl {
+	list-style: none;
+	transition: transform 1s ease-in-out;
+	position: absolute;
+	display: flex;
+	padding: 0;
+	margin: 10px 0;
+	height: 100%;
+}
+
+
+.itemLi {
+	width: 200px;
+	height: 250px;
+	opacity: 1;
+	transition: opacity 1s ease-in-out;
+	text-align: center;
+}
+
+.spanBox {
+	position: absolute;
+	width: 100%;
+	height: 45px;
+	display: flex;
+	justify-content: space-between;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.itemImg {
+	width: 180px;
+	height: 150px;
+	border-radius: 10px;
+	outline: none;
+	transition: transform 0.3s ease;
+}
+
+.itemImg:hover {
+	margin-top: 7px;
+	transform: scale(1.05);
+	border: 2px solid #fff78aed;
+}
+
+.sp {
+	font-size: 40px;
+	cursor: pointer;
+	width: 34px;
+	height: 34px;
+	margin: 0 65px;
+}
+
+.announcement {
+	width: 1300px;
+	height: 400px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	margin: 20px auto;
+	border-radius: 20px;
+	position: relative;
+}
+
+
+.mentList {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1250px;
+	height: 300px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.announcement:hover {
+	border: 5px solid #fff78aed;
+}
+
+.product-logo {
+	font-weight: normal;
+	font-size: 16px;
+	color: #dec2c2;
+}
+
+.product-name {
+	font-weight: bolder;
+	font-size: 14px;
+	margin: 10px 0;
+	color: #45474B;
+}
+
+.product-price {
+	font-weight: bolder;
+	font-size: 14px;
+	color: #45474B;
+}
+/* ========================================================= */
+
+#mapBox{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.map-img-box{
+	width: 250px;
+	height: 300px;
+	margin-right: 7px;
+}
+.map-img-box img{
+	object-fit: fill;
+	width: 250px;
+	height: 300px;
+	border-radius: 30px;
+}
+.mapDetail{
+	margin: 20px;
+	letter-spacing: 2px;
+	display: flex;
+	font-size: 15px;
+	width: 600px;
+	height: 300px;
+	border: 1px solid #fff78aed;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+.mapDetail:hover{
+	transform: scale(1.03);
+}
+.mapDetail span{
+	margin: 7px;
+}
+.filezone{
+	margin-right: 25px;
+	width: 250px;
+	z-index: -5;
+	/* filter: brightness(70%); */
+}
+
+.all{
+	margin: 30px auto;
+	width: 1500px;
+	height: 900px;
+}
+.topBox{
+	margin: 0 auto;
+	width: 1450px;
+	height: 400px;
+}
+.list{
+	width: 75%;
+	height: 400px;
+	line-height : 20px;
+	margin: 10px auto;
+}
+.underBox{
+	border : 10px, solid, black;
+	width : 1500px;
+	height : 400px;
+	margin: 30px auto;
+	display: flex;
+	justify-content: space-around;
+}
+.rankList{
+	border : 2px solid #fff78aed; 
+	line-height : 25px;
+	width: 740px;
+	height: 300px;
+	border-radius: 20px;
+}
+.listp,.rankp,.myp{
+margin-left: 20px;
+font-size: 17px;
+font-weight: bold;
+}
+.write{
+margin-left: 100px;
+color: #097;
+font-family : inherit;
+font-weight: 700;
+}
+.ulbox{
+	height: 535px;
+	padding: 20px;
+	border-radius: 20px;
+	border : 2px solid #fff78aed; 
+}
+.listli{
+	font-size : 12px;
+	font-family : monospace;
+	border-bottom: 1px solid #efefef;
+	
+}
+.listul,.rankul,.myul{
+	  background-color: white;
+	  margin-bottom: 20px;
+	  list-style: none;
+}
+.listlia,.ranklia,.mylia{
+height : 25px; 
+font-weight: bold;
+display: block;
+   color: #000;
+}
+
+
+.listli:before{
+display: inline-block;
+vertical-align: middle;
+padding: 0px 5px 6px 0px;
+}
+.rankli{
+	margin-bottom: 20px;
+	font-size : 12px;
+	font-family : monospace;
+	border-bottom: 1px solid #efefef;
+}
+.myli{
+	margin-bottom: 20px;
+	font-size : 12px;
+	font-family : monospace;
+	border-bottom: 1px solid #efefef;
+}
+.allList{
+font-family : inherit;
+font-weight: 700;
+   color: #097;
+}
+.rank,.my{
+	padding: 10px;
+}
+.cmtcount{
+color: red;
+}
+.scroll-senser{
+	position: fixed;
+  	top: 87%;
+  	right: 3%;
+  	transform: translateY(-30%);
+  	cursor: pointer;
+}
+.scroll-smalldiv{
+	background: black;
+	border-radius: 50%;
+	width: 50px;
+	height: 40px;
+	text-align: center;
+}
+.scroll-smalldiv:hover{
+	background-color: white;
+}
+.scroll{
+	font-size: 28px;
+	color: white;
+}
+.scroll:hover{
+	color: black;
+}

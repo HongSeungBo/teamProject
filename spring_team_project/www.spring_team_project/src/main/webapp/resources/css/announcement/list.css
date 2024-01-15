@@ -1,0 +1,93 @@
+@charset "UTF-8";
+.outer{
+    width : 1500px;
+	margin: 20px auto;
+}
+.listbox {
+  margin: 0 auto;
+}
+
+.listUl {
+  list-style: none;
+  padding: 0;
+}
+
+.listHeader{
+  display: flex;
+  font-weight: bold;
+}
+.content{
+	display: flex;
+  font-weight: bold;
+}
+
+
+.listHeader span,.content span,
+.listTitle  {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.listUl li {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.listUl li:last-child {
+  border-bottom: none; 
+}
+
+.listUl li span {
+  flex: 1;
+  padding: 8px;
+  text-align: center;
+}
+
+
+.listTitle {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+   line-height: 40px; 
+}
+
+.ulpage {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ulpage {
+    list-style: none;
+    padding: 0;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .ulpage li {
+     display: inline-block;
+    margin-right: 5px;
+  }
+
+  .ulpage a {
+     text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgb(213,213,213);
+    border-radius: 4px;
+    &:hover {
+      background-color: #fffddfed;
+    }
+  }
+  .page-item a.ullia.active {
+  background-color: #fff78aed;
+}
+
+.page-item a.ullia.active:hover {
+  background-color: #ffe680;
+}

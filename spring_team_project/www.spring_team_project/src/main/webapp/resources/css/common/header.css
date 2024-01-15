@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body{
+	padding: 0;
+	margin: 0;
+}
+.tiny-logo{
+	width: 100px;
+	height: 40px;
+    transform: translateY(10px);
+}
+.header {
+	width: 100%;
+	height: 220px;
+	position: relative;
+	margin: 0 auto;
+	background-color: white;
+	 z-index: 1000;
+}
+.header-border-bottom{
+	border-bottom: 2px solid #f0f0f0;
+}
+.subHeader {
+	width: 1500px;
+	margin: 0 auto;
+}
+
+.subHeaderUl {
+	list-style: none;
+	float: right;
+	margin-right: 30px;
+	box-sizing: initial;
+}
+
+.subHeaderLi {
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 50px;
+}
+#profileImage_img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+#profile_div{
+	border: none;
+}
+.subHeaderLiA {
+	font-size: 13px;
+}
+
+.subHeaderLi:first-child {
+	margin-left: 0;
+}
+
+.mainHeader {
+	width: 1000px;
+	margin : 30px 0;
+	height: 80px;
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 30px 0;
+}
+
+.mainHeaderUl {
+	list-style: none;
+	text-align: center;
+	/* margin: 0 auto; */
+}
+
+.mainHeaderLi {
+	/* float: left;
+	margin-left: 50px; */
+	display: inline-block; /* 가운데 정렬을 위해 추가 */
+	margin: 0 20px;
+	font-size: 30px;
+}
+
+.mainHeaderLiA {
+	margin-left: 30px;
+	font-weight: 700;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+.submenu{
+	width: 130px;
+	margin: 0 auto;
+	padding: 0;
+	display: none;
+	position: absolute;
+	background-color: rgba(255, 255, 0, 0.10);
+	border: 7px solid #fff78aaa;
+	border-radius: 15px;
+	padding: 10px;
+	box-sizing: initial;
+}
+
+.submenuLi{
+	margin-top: 7px;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 600;
+	height: 20px;
+	list-style: none;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 8px 15px;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+	box-sizing: initial;
+}
+
+.submenuUl {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin: 0;
+	padding: 0;
+	box-sizing: initial;
+}
+
+.submenuLiA {
+	font-size: 15px;
+	box-sizing: initial;
+}

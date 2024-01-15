@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  <configuration>
+  	<settings>
+  		<setting name="mapUnderscoreToCamelCase" value="true"/>
+  	</settings>
+  	<typeAliases>
+  		<typeAlias type="com.projectteamspring.www.domain.ShopVO" alias="svo"/>
+		<typeAlias type="com.projectteamspring.www.domain.ProductFileVO" alias="pfvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.TmtFileSaveVO" alias="tvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.ShopPagingVO" alias="spvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.ProductPagingVO" alias="ppvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.ProductCommentVO" alias="pcvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.ProductCommentFileVO" alias="pcfvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.ProductCommentRecommendVO" alias="pcrvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.MyWishVO" alias="mwvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.StorageCartVO" alias="scvo"/>
+		<typeAlias type="com.projectteamspring.www.domain.MyCartVO" alias="mcvo"/>
+  	</typeAliases>
+  </configuration>

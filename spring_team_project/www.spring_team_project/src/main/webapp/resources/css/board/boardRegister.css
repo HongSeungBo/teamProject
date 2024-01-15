@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.textBox {
+  width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #fff78aed; 
+  border-radius: 8px;
+}
+
+.textBox form {
+  display: flex;
+  flex-direction: column;
+}
+
+.textBox div {
+  margin-bottom: 15px;
+}
+#inputGroupSelect01 {
+  margin-right: 10px;
+  border-radius: 5px;
+  padding : 10px;
+  width: 150px;
+  text-align: center;
+  border: 1px solid #efefef;
+}
+.tag{
+	font-size: 15px;
+	font-weight: bold;
+}
+.ti,
+.wr {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid rgb(213,213,213);
+  border-radius: 4px;
+}
+
+.post {
+  background-color: #fff78aed; 
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.post:hover {
+  background-color: #fff241ed;
+}

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.refund-con{
+	width: 1300px;
+	margin: 0 auto;
+}
+.listUl{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.listUl li{
+	margin: 25px;
+	border-bottom: 1px solid rgba(225, 225, 225, 0.4);
+}
+.header-box{
+	display: flex;
+}
+.header-info{
+	width: 200px;
+}
+.body-box{
+	display: flex;
+}
+.body-info{
+	width: 200px;
+}
+.body-button{
+	width: 300px;
+	display: flex;
+	justify-content: space-around;
+}
+.refundBtn{
+	display: flex;
+	background-color: #fbeef2;
+	color: #d03362;
+	width: 75px;
+	height: 40px;
+	border-radius: 9px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	cursor: pointer;
+}
+.refundBtn:hover{
+    transform: scale(1.03);
+}
+.success{
+	display: flex;
+	background-color: #e4faf3;
+	color: #16b079;
+	width: 75px;
+	height: 40px;
+	border-radius: 9px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+}
+.div{
+	height: 300px;
+}

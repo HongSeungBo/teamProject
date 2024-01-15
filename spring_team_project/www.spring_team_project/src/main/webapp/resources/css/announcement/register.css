@@ -1,0 +1,36 @@
+@charset "UTF-8";
+.outer {
+   width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #fff78aed; 
+  border-radius: 8px;
+}
+
+.outer form {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleDiv, .writerDiv, .contentDiv {
+  margin: 15px;
+}
+input[type="text"]{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid rgb(213,213,213);
+  border-radius: 4px;
+}
+
+.post {
+  background-color: #fff78aed; 
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post:hover {
+   background-color: #fff241ed;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.projectteamspring.www.repository.ProductFileDAO">
+	<insert id="insertFiles">
+		insert into product_file (uuid, pno, save_dir, file_size, file_name)
+		values (#{uuid}, #{pno}, #{saveDir}, #{fileSize}, #{fileName})
+	</insert>
+	<insert id="insertMainFile">
+		insert into product_file (uuid, pno, save_dir, file_size, file_name, main)
+		values (#{uuid}, #{pno}, #{saveDir}, #{fileSize}, #{fileName}, 1)
+	</insert>
+	<select id="getCount" resultType="int">
+		select count(pno) from product_file where pno = #{i} del_type = 'N'
+	</select>
+	<!-- <select id="selectList" resultType="pfvo">
+		select * from product_file where pno = #{num} and main = 1
+	</select> -->
+	<select id="selectList" resultType="pfvo">
+		select * from product_file where pno = #{pno} and main = 1 and del_type = 'N'
+	</select>
+	<select id="selectOneFileList" resultType="pfvo">
+		select * from product_file where pno = #{pno} and del_type = 'N' and tmt_del ='N'
+	</select>
+	<update id="deletePrevFile">
+		update product_file set tmt_del = 'Y' where uuid = #{uuid}
+	</update>
+	<update id="deleteFileList">
+		update product_file set del_type = 'Y' where pno = #{pno}
+	</update>
+	<update id="cancelDelFie">
+		update product_file set tmt_del ='N'
+	</update>
+	<update id="realDelMainFile">
+		update product_file set del_type ='Y' where tmt_del = 'Y'
+	</update>
+	</mapper>

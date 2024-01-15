@@ -1,0 +1,60 @@
+body {
+ font-family: Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+}
+
+.container {
+ width: 1000px;
+ margin: 30px auto;
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 8px;
+ border : 2px solid #fff78aed; 
+ position: relative;
+ }
+
+ .detailBox {
+  margin: 20px auto;
+  border : 2px solid #2dd3c3;
+  border-radius: 10px;
+ }
+.detailUl {
+ list-style: none;
+ padding: 15px;
+ }
+.detailLi {
+ margin-bottom: 10px;
+  }
+#profileImage{
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+}
+ .detailLi strong {
+  display: inline-block;
+ width: 120px;
+ font-weight: bold;
+ }
+.modiBox,.delBox{
+	text-align: center;
+	margin: 0 auto;
+}
+ .modiBtn {
+ background-color: #fff78aed;
+ padding: 10px 15px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+ .modiBtn:hover {
+    background-color:  #fff241ed;
+}
+.delBtn{
+ background-color: red;
+ color: white;
+ padding: 10px 15px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}

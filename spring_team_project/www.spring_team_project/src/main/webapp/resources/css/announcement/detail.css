@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.contentBox {
+    width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #fff78aed; 
+    border-radius: 8px;
+  }
+  
+  .announcementMod,
+  .announcementList {
+    background-color: #98dfd8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .announcementDel{
+  background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 5px;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  .announcementMod:hover,
+  .announcementList:hover {
+    background-color: #2dd3c3;
+  }
+  
+.de {
+ margin-top: 20px;
+}
+  
+  
+.detailTitle h1 {
+ margin: 0;
+ color: #333;
+}
+  
+  .detailTable {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+  
+  .detailTable th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #98dfd8;
+  }
+  
+  .detailTable td {
+    padding: 10px;
+  }
+  .commentdelmodi{
+    text-align: center;
+  }

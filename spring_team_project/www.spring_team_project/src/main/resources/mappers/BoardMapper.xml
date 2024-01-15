@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projectteamspring.www.repository.BoardDAO">
+  <insert id="insert">
+  	insert into board(title, writer, content, animal_type)
+	  	values(#{title}, #{writer}, #{content} , #{animalType})
+  </insert>
+  	<select id="selectList" resultType="com.projectteamspring.www.domain.BoardVO">
+  		select * from board where isdel = 'y' <include refid="search"></include> 
+  		order by bno desc limit #{pageStart}, #{qty}
+  	</select>
+	  <select id="selectOneBno" resultType="long">
+	  	select max(bno) from board 
+	  </select>
+	  <select id="getTotalList" resultType="int">
+	  	select count(bno) from board where isdel = 'y' <include refid="search"></include>
+	  </select>
+	  <select id="detail" resultType="com.projectteamspring.www.domain.BoardVO">
+	  select * from board where bno = #{bno}
+	  </select>
+	  <update id="modify">
+	  update board set title = #{title}, content = #{content}, mod_at = now()  where bno = #{bno}
+	  </update>
+	  <update id="remove">
+	  update board set isdel = 'n' where bno = #{bno}
+	  </update>
+	  <update id="readCount">
+	  	update board set read_count = read_count + #{cnt} where bno = #{bno}
+	  </update>
+	  <select id="selectTop" resultType="com.projectteamspring.www.domain.BoardVO">
+	  select * from board order by bno desc limit 10
+	  </select>
+	  <select id="topList" resultType="com.projectteamspring.www.domain.BoardVO">
+	  select * from board order by read_count desc limit 5
+	  </select>
+	  <select id="commentCnt">
+	  	update board b set b.cmt_qty = (select count(c.cno) from comment c where c.bno = b.bno)
+	  </select>
+	  <select id="myList" resultType="com.projectteamspring.www.domain.BoardVO" parameterType="string">
+	  	select * from board where writer = #{authEmail} order by bno desc limit 5
+	  </select>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	<sql id="search">
+		<choose>
+			<when test="type != null and animalType != null">
+				<trim	prefix="and (" suffix=")" prefixOverrides="OR">
+		  			<foreach collection="typeToArray" item="type">
+		  				<trim prefix="OR">
+		  					<choose>
+		  						<when test="type == 't'.toString">
+		  							title like concat('%',#{keyword},'%')
+		  						</when>
+		  						<when test="type == 'w'.toString">
+		  							writer like concat('%',#{keyword},'%')
+		  						</when>
+		  						<when test="type == 'c'.toString">
+		  							content like concat('%',#{keyword},'%')
+		  						</when>
+		  					</choose>
+		  				</trim>
+		  			</foreach>
+		  		</trim>
+		  		and animal_type = #{animalType}
+			</when>
+			<when test="type != null">
+				<trim	prefix="and (" suffix=")" prefixOverrides="OR">
+  			<foreach collection="typeToArray" item="type">
+  				<trim prefix="OR">
+  					<choose>
+  						<when test="type == 't'.toString">
+  							title like concat('%',#{keyword},'%')
+  						</when>
+  						<when test="type == 'w'.toString">
+  							writer like concat('%',#{keyword},'%')
+  						</when>
+  						<when test="type == 'c'.toString">
+  							content like concat('%',#{keyword},'%')
+  						</when>
+  					</choose>
+  				</trim>
+  			</foreach>
+  		</trim>
+			</when>
+			<when test="animalType != null">
+				where animal_type = #{animalType}
+			</when>
+		</choose>
+  	
+  </sql>
+	  
+</mapper>

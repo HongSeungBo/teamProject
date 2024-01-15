@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.projectteamspring.www.repository.ProductCommentDAO">
+  	<insert id="registerText">
+  		insert into product_comment (pno, email, content, score)
+  		values(#{pno}, #{email}, #{content}, #{score})
+  	</insert>
+  	<select id="getMaxNum" resultType="long">
+  		select max(pcno) from product_comment where del_type = 'N'
+  	</select>
+  	<select id="getPnoNum" resultType="long">
+  		select pno from product_comment where pcno=(select max(pcno) from product_comment)
+  	</select>
+  	<select id="getTotalCount" resultType="int">
+  		select count(pcno) from product_comment where pno = #{pno} and del_type = 'N'
+  	</select>
+  	<select id="getList" resultType="pcvo">
+  		select * from product_comment where pno=#{pno} and del_type='N' order by recommend desc limit #{ppvo.pageStart}, #{ppvo.qty}
+  	</select>
+  	<update id="deleteCmt">
+  		update product_comment set del_type = 'Y' where pcno = #{pcno}
+  	</update>
+  	<update id="deleteCmtAll">
+  		update product_comment set del_type = 'Y' where pno=#{pno}
+  	</update>
+  	<select id="getSearchTotalCount" resultType="int">
+  		select count(pcno) from product_comment where pno = #{pno} and del_type = 'N' <include refid="search"></include>
+  	</select>
+  	<select id="getSearchList" resultType="pcvo">
+  		select * from product_comment where pno=#{pno} and del_type='N' <include refid="search"></include> order by pcno desc limit #{ppvo.pageStart}, #{ppvo.qty}
+  	</select>
+  	<update id="updateRecommendCnt">
+  		update product_comment set recommend = ( select count(pcno) from product_comment_recommend where product_comment_recommend.pcno = product_comment.pcno)
+  	</update>
+  	<sql id="search">
+  		<if test="ppvo.type != null">
+	  		<trim prefix="and (" suffix=")">
+	  			<foreach collection="ppvo.typeToArray" item="type">
+		  			<choose>
+		  				<when test="type=='i'.toString()">
+		  					email like concat('%', #{ppvo.keyword}, '%')
+		  				</when>
+		  				<when test="type=='c'.toString()">
+		  					content like concat('%', #{ppvo.keyword}, '%')
+		  				</when>
+		  			</choose>
+		  		</foreach>
+	  		</trim>
+  		</if>
+  	</sql>
+  </mapper>

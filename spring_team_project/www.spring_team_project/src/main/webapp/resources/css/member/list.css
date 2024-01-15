@@ -1,0 +1,144 @@
+@charset "UTF-8";
+.mlistBox {
+    border: 1px solid #ffe680;
+    padding: 10px;
+    border-radius: 5px;
+    width: 1200px;
+    margin: 30px auto;
+}
+
+.mlistUl {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mListli {
+    margin-bottom: 8px;
+}
+
+.mListli {
+    border-bottom : 1px solid rgb(213,213,213);
+    padding: 8px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+.mListli:last-child {
+  border-bottom: none;
+}
+.mListlia {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+    font-size: 20px;
+    font-weight: bold;
+}
+.mListlispan {
+	 border-bottom : 1px solid #98dfd8;
+    margin-bottom: 8px;
+    font-size : 28px;
+    padding: 8px;
+    border-radius: 3px;
+    font-weight : bold;
+    text-align: center;
+    
+}
+.pageDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pageUl {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.pageLi {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.ullia {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgb(213,213,213);
+    border-radius: 4px;
+    &:hover {
+      background-color: #fffddfed;
+    }
+}
+
+.pageLi a.ullia.active {
+  background-color: #fff78aed;
+}
+
+.pageLi a.ullia.active:hover {
+  background-color: #ffe680;
+}
+.pageLi a span {
+    font-weight: bold;
+}
+
+.searchBox {
+    margin: 20px 0;
+}
+
+.searchBox form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchBox div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchBoxSelect, .searchBoxInput {
+    padding: 8px;
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.searchBoxSelect {
+    width: 100px;
+}
+
+.searchBoxInput {
+    flex: 1;
+}
+
+.searchBoxButton {
+    padding: 8px 15px;
+    background-color:#fff78aed;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.searchBoxButton:hover {
+    background-color: #fff241ed;
+}
+.leaveMemberBox{
+	width : 110px;
+	height : 30px;
+   margin: 15px auto;
+}
+.leaveMemberBoxBtn{
+	#fff78aed;
+	border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 8px 15px;
+    #fff241ed;
+    background-color:#fff78aed;
+}
+.leaveMemberBoxBtn:hover{
+	background-color: #fff241ed;
+}

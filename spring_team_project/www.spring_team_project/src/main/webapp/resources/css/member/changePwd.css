@@ -1,0 +1,39 @@
+@charset "UTF-8";
+ .newPwdDiv {
+    background-color: #fff;
+    border-radius: 8px;
+    margin : 40px auto;
+    padding: 20px;
+    width: 300px;
+    border: 2px solid #fff78aed;
+  }
+
+  .newPwdForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pwdSpan {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .newPwd1,
+  .newPwd2 {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #2dd3c3;
+    border-radius: 4px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #fff78aed;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color:  #fff241ed;
+  }
